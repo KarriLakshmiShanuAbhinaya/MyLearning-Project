@@ -27,10 +27,19 @@
     from { transform: translateX(100%); }
     to { transform: translateX(0); }
   }
-}
 
-html {
-  scroll-behavior: smooth;
+  /* Fade in animation for cards */
+  --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+  @keyframes fade-in-up {
+    from { 
+      opacity: 0; 
+      transform: translateY(40px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
 }
 
 /* Force pure white theme regardless of system preference */

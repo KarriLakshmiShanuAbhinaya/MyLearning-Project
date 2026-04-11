@@ -16,15 +16,15 @@ export default function AboutPage() {
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-white/95 pointer-events-none"></div>
 
         <div className="w-full relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white text-emerald-700 rounded-lg text-xs font-bold mb-8 border border-emerald-200 shadow-sm uppercase tracking-widest backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white text-emerald-700 rounded-lg text-xs font-bold mb-8 border border-emerald-200 shadow-sm uppercase tracking-widest backdrop-blur-sm opacity-0 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
             About the Mission
           </div>
           
-          <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold mb-8 leading-[0.95] tracking-tight italic">
+          <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold mb-8 leading-[0.95] tracking-tight italic opacity-0 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
             Crafting <span className="text-emerald-600 not-italic">Exceptional</span> <br /> Digital Stories
           </h1>
           
-          <p className="text-xl sm:text-2xl text-slate-500 max-w-4xl mx-auto mb-10 leading-relaxed italic text-center font-medium">
+          <p className="text-xl sm:text-2xl text-slate-500 max-w-4xl mx-auto mb-10 leading-relaxed italic text-center font-medium opacity-0 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
             MyLearning Project is an elite digital consortium dedicated to architecting absolute brand authority through high-complexity technology and creative design.
           </p>
         </div>
@@ -35,7 +35,7 @@ export default function AboutPage() {
         <div className="w-full px-8 sm:px-12 lg:px-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
             
-            <div className="space-y-10">
+            <div className="space-y-10 opacity-0 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
               <div className="p-10 lg:p-16 rounded-3xl border border-slate-100 bg-white shadow-xl hover:shadow-2xl transition-all group relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full -mr-16 -mt-16 blur-2xl"></div>
                 <h2 className="text-emerald-600 font-bold uppercase tracking-widest text-xs mb-4">Our Core Objective</h2>
@@ -76,7 +76,7 @@ export default function AboutPage() {
       {/* SECTION 3: STATS - Precise Horizontal Alignment */}
       <section className="pb-24 bg-white">
         <div className="w-full px-8 sm:px-12 lg:px-24">
-          <div className="bg-slate-50 border border-slate-100 rounded-[3rem] p-16 lg:p-24 shadow-2xl relative overflow-hidden group">
+          <div className="bg-slate-50 border border-slate-100 rounded-[3rem] p-16 lg:p-24 shadow-2xl relative overflow-hidden group opacity-0 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
             <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent transition-opacity"></div>
             <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-16 text-center">
               <StatBox num="50+" label="Projects" />
@@ -93,9 +93,9 @@ export default function AboutPage() {
   );
 }
 
-function AboutGridCard({ icon, title, desc }: { icon: React.ReactNode, title: string, desc: string }) {
+function AboutGridCard({ icon, title, desc, index = 0 }: { icon: React.ReactNode, title: string, desc: string, index?: number }) {
   return (
-    <div className="flex items-center gap-6 p-8 rounded-3xl border border-slate-100 bg-white hover:border-emerald-500/30 hover:bg-emerald-50/30 transition-all group shadow-sm">
+    <div className="flex items-center gap-6 p-8 rounded-3xl border border-slate-100 bg-white hover:border-emerald-500/30 hover:bg-emerald-50/30 transition-all group shadow-sm opacity-0 animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
       <div className="w-12 h-12 lg:w-16 lg:h-16 bg-emerald-500/5 rounded-2xl flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500 flex-shrink-0">
         {icon}
       </div>
