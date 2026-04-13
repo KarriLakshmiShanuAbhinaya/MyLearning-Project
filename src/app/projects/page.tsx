@@ -180,13 +180,13 @@ function ProjectsContent() {
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none grid-texture"></div>
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-white/95 pointer-events-none"></div>
 
-        <div className="w-full relative z-10">
+        <div className="w-full relative z-10 px-4 sm:px-8">
           <ScrollReveal baseDelay={100} className="inline-flex items-center gap-2 px-4 py-1.5 bg-white text-emerald-700 rounded-lg text-xs font-bold mb-8 border border-emerald-200 shadow-sm uppercase tracking-widest backdrop-blur-sm">
             {category === 'All' ? 'Strategic Impact Suite' : `${category} Optimization`}
           </ScrollReveal>
           
           <ScrollReveal baseDelay={200}>
-            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold mb-8 leading-[0.95] tracking-tight italic">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold mb-8 leading-[0.95] tracking-tight italic">
               Defining <br />
               <span className="text-emerald-600 not-italic">
                 {category === 'All' ? 'Portfolio Excellence' : `${category} Dominance`}
@@ -224,7 +224,7 @@ function ProjectsContent() {
 
       {/* SECTION 2: AESTHETIC PROJECT GALLERY */}
       <section className="py-16 bg-white min-h-[60vh]">
-        <div className="w-full px-8 sm:px-12 lg:px-24">
+        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-24">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {filteredProjects.map((project, index) => (
               <ProjectCard 
@@ -245,7 +245,7 @@ function ProjectsContent() {
 
       {/* Modal Overlay Component */}
       {expandedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-12 opacity-0 animate-fade-in-up" style={{ animationDuration: '400ms' }}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 lg:p-12 opacity-0 animate-fade-in-up" style={{ animationDuration: '400ms' }}>
           {/* Backdrop */}
           <div 
             className="absolute inset-0 bg-slate-900/60 backdrop-blur-md transition-opacity" 
@@ -360,7 +360,7 @@ function ProjectCard({ title, desc, category, icon, index, onClick }: { title: s
     <ScrollReveal baseDelay={index * 100} className="h-full">
       <div 
         onClick={onClick}
-        className="group relative bg-[#fafafa] border border-slate-200/60 rounded-[2.5rem] p-8 lg:p-10 shadow-sm hover:shadow-[0_45px_100px_-20px_rgba(5,150,105,0.12)] hover:border-emerald-500/30 transition-all duration-700 overflow-hidden flex flex-col justify-between h-full bg-gradient-to-br from-white to-slate-50/50 cursor-pointer"
+        className="group relative bg-[#fafafa] border border-slate-200/60 rounded-[2.5rem] p-6 lg:p-8 xl:p-10 shadow-sm hover:shadow-[0_45px_100px_-20px_rgba(5,150,105,0.12)] hover:border-emerald-500/30 transition-all duration-700 overflow-hidden flex flex-col justify-between h-full bg-gradient-to-br from-white to-slate-50/50 cursor-pointer"
       >
         <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full -mr-32 -mt-32 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
         

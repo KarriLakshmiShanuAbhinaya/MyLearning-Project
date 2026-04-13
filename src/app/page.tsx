@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full min-h-screen bg-white font-sans text-slate-900 overflow-x-hidden">
       {/* SECTION 1: HERO - Professional Light Emerald Shade */}
-      <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20 px-8 sm:px-12 lg:px-24 flex flex-col justify-center items-center bg-emerald-50/80 text-black">
+      <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20 px-4 sm:px-8 lg:px-16 xl:px-24 flex flex-col justify-center items-center bg-emerald-50/80 text-black">
         {/* Subtle Overlay Texture */}
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none grid-texture"></div>
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-white/95 pointer-events-none"></div>
@@ -39,7 +39,7 @@ export default function Home() {
               </ScrollReveal>
               
               <ScrollReveal baseDelay={200}>
-                <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold leading-[0.95] tracking-tight italic">
+                <h1 className="text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] tracking-tight italic">
                   Architecting <br />
                   <span className="text-emerald-600 not-italic">Market Dominance</span>
                 </h1>
@@ -54,7 +54,7 @@ export default function Home() {
               <ScrollReveal baseDelay={400} className="flex flex-wrap gap-6">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center justify-center px-10 py-5 bg-emerald-600 text-white rounded-lg font-bold text-xl hover:bg-slate-900 transition-all duration-300 shadow-2xl active:scale-95"
+                  className="group inline-flex items-center justify-center px-8 py-4 sm:px-10 sm:py-5 bg-emerald-600 text-white rounded-lg font-bold text-lg sm:text-xl hover:bg-slate-900 transition-all duration-300 shadow-2xl active:scale-95"
                 >
                   Free Consultation <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-all" />
                 </Link>
@@ -79,8 +79,8 @@ export default function Home() {
 
       {/* SECTION 2: SERVICES - Bordered Cards & Two-Line Content */}
       <section className="py-16 relative overflow-hidden bg-white">
-        <div className="w-full px-8 sm:px-12 lg:px-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-11">
+        <div className="w-full px-4 sm:px-8 lg:px-16 xl:px-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 lg:gap-8">
             <ServiceCard 
               icon={<Search />} 
               title="Search Equity" 
@@ -127,14 +127,14 @@ export default function Home() {
 
       {/* SECTION 3: STRATEGIC LEVERAGE - Aesthetic Features */}
       <section className="pb-16 bg-white border-t border-slate-100 pt-16">
-        <div className="w-full px-8 sm:px-12 lg:px-24">
+        <div className="w-full px-4 sm:px-8 lg:px-16 xl:px-24">
           <div className="flex flex-col lg:flex-row items-start gap-16 lg:gap-24">
             
             {/* Advantage Portion */}
             <div className="lg:w-2/3 space-y-12">
               <ScrollReveal baseDelay={100}>
                 <h2 className="text-emerald-600 font-bold uppercase tracking-widest text-xs mb-3">Global Influence</h2>
-                <h3 className="text-5xl lg:text-7xl font-bold text-black leading-tight italic">
+                <h3 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-black leading-tight italic">
                   Executive Equilibrium.
                 </h3>
               </ScrollReveal>
@@ -150,7 +150,7 @@ export default function Home() {
 
             {/* Foundational Mission Portion */}
             <ScrollReveal baseDelay={300} className="lg:w-1/3 w-full lg:sticky lg:top-32">
-              <div className="bg-emerald-50 border border-emerald-200 rounded-3xl p-10 text-center shadow-xl group transition-all duration-500 overflow-hidden relative">
+              <div className="bg-emerald-50 border border-emerald-200 rounded-3xl p-6 sm:p-10 text-center shadow-xl group transition-all duration-500 overflow-hidden relative">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full -mr-16 -mt-16 blur-2xl"></div>
                 
                 <h4 className="text-emerald-700 font-bold uppercase tracking-widest text-[10px] mb-6 font-heading">Our Mission</h4>
@@ -174,7 +174,7 @@ export default function Home() {
 
       {/* Feature Modal Overlay */}
       {expandedFeature && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-12 opacity-0 animate-fade-in-up" style={{ animationDuration: '400ms' }}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 lg:p-12 opacity-0 animate-fade-in-up" style={{ animationDuration: '400ms' }}>
           {/* Backdrop */}
           <div 
             className="absolute inset-0 bg-slate-900/60 backdrop-blur-md transition-opacity" 
@@ -187,7 +187,7 @@ export default function Home() {
             className="relative w-full max-w-4xl bg-white rounded-[2.5rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col max-h-[90vh]"
           >
             {/* Modal Header */}
-            <div className="px-8 py-8 lg:px-12 lg:py-10 border-b border-slate-100 flex justify-between items-start bg-slate-50/30">
+            <div className="px-6 py-6 lg:px-12 lg:py-10 border-b border-slate-100 flex justify-between items-start bg-slate-50/30">
               <div className="flex items-start gap-6 lg:gap-8">
                 <div className="w-16 h-16 lg:w-20 lg:h-20 bg-white border border-slate-200 rounded-[1.5rem] flex items-center justify-center text-emerald-600 shadow-sm flex-shrink-0">
                   {expandedFeature.icon}
@@ -210,8 +210,8 @@ export default function Home() {
             </div>
             
             {/* Modal Scrollable Body */}
-            <div className="p-8 lg:p-12 overflow-y-auto overflow-x-hidden">
-              <p className="text-xl lg:text-2xl text-slate-700 leading-relaxed italic mb-12 font-medium tracking-tight">
+            <div className="p-6 lg:p-12 overflow-y-auto overflow-x-hidden">
+              <p className="text-lg lg:text-2xl text-slate-700 leading-relaxed italic mb-8 sm:mb-12 font-medium tracking-tight">
                 "{expandedFeature.desc}"
               </p>
               
@@ -256,7 +256,7 @@ export default function Home() {
 function ServiceCard({ icon, title, desc, iconClass = "text-emerald-600", index = 0 }: { icon: React.ReactNode, title: string, desc: string, iconClass?: string, index?: number }) {
   return (
     <ScrollReveal baseDelay={index * 50} className="h-full">
-      <div className="flex flex-col items-center justify-center text-center p-8 rounded-3xl border border-slate-100 hover:bg-emerald-50/50 hover:border-emerald-200 hover:-translate-y-1 transition-all duration-300 group cursor-default shadow-sm hover:shadow-lg h-full">
+      <div className="flex flex-col items-center justify-center text-center p-6 lg:p-8 rounded-3xl border border-slate-100 hover:bg-emerald-50/50 hover:border-emerald-200 hover:-translate-y-1 transition-all duration-300 group cursor-default shadow-sm hover:shadow-lg h-full">
         <div className={`w-12 h-12 bg-emerald-500/5 rounded-xl flex items-center justify-center ${iconClass} mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-sm`}>
           {icon}
         </div>
