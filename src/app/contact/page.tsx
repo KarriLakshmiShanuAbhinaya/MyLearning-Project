@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, ArrowRight, ShieldCheck, Zap, TrendingUp, BarChart4, Globe2, Layers, Briefcase } from 'lucide-react';
 import Footer from '@/components/Footer';
+import { ScrollReveal } from '@/components/ScrollReveal';
 
 export default function ContactPage() {
   return (
@@ -20,18 +21,22 @@ export default function ContactPage() {
             {/* Left Column (Bottom on Mobile): Narrative & Pillars */}
             <div className="w-full lg:w-1/2 space-y-8 lg:space-y-10">
               <div className="space-y-4 lg:space-y-6">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-xs font-bold border border-emerald-200 shadow-sm uppercase tracking-widest opacity-0 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+                <ScrollReveal baseDelay={100} className="inline-flex items-center gap-2 px-4 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-xs font-bold border border-emerald-200 shadow-sm uppercase tracking-widest">
                   Executive Outreach
-                </div>
+                </ScrollReveal>
                 
-                <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold mb-8 leading-[0.95] tracking-tight italic text-black opacity-0 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-                  Strategic <br />
-                  <span className="text-emerald-600 not-italic">Alignment</span>
-                </h1>
+                <ScrollReveal baseDelay={200}>
+                  <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold mb-8 leading-[0.95] tracking-tight italic text-black">
+                    Strategic <br />
+                    <span className="text-emerald-600 not-italic">Alignment</span>
+                  </h1>
+                </ScrollReveal>
                 
-                <p className="text-lg lg:text-xl text-emerald-900/80 leading-relaxed italic text-justify font-medium opacity-0 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
-                  Initiate a high-stakes partnership with <span className="text-black font-bold">MyLearning Project</span> for absolute market dominance. Define your brand's ultimate growth trajectory today.
-                </p>
+                <ScrollReveal baseDelay={300}>
+                  <p className="text-lg lg:text-xl text-emerald-900/80 leading-relaxed italic text-justify font-medium">
+                    Initiate a high-stakes partnership with <span className="text-black font-bold">MyLearning Project</span> for absolute market dominance. Define your brand's ultimate growth trajectory today.
+                  </p>
+                </ScrollReveal>
               </div>
 
               {/* Strategic Pillars Grid */}
@@ -97,7 +102,7 @@ function ContactForm() {
   }
 
   return (
-    <div className="w-full opacity-0 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+    <ScrollReveal baseDelay={200} className="w-full">
       <div className="bg-slate-100/80 rounded-[2.5rem] shadow-xl overflow-hidden border-2 border-emerald-500/10 hover:border-emerald-500/30 transition-all duration-500">
         <div className="p-8 lg:p-12 bg-gradient-to-b from-slate-100/90 to-transparent">
           {success && (
@@ -147,7 +152,7 @@ function ContactForm() {
           </form>
         </div>
       </div>
-    </div>
+    </ScrollReveal>
   );
 }
 
@@ -169,11 +174,13 @@ function InputField({ label, name, type, placeholder }: { label: string, name: s
 
 function ExpectationItem({ text, icon, index = 0 }: { text: string, icon: React.ReactNode, index?: number }) {
   return (
-    <div className="flex items-center gap-5 group p-4 rounded-xl border border-slate-50 hover:bg-emerald-50/50 hover:border-emerald-100 transition-all shadow-sm opacity-0 animate-fade-in-up" style={{ animationDelay: `${index * 50}ms` }}>
-      <div className="w-10 h-10 bg-emerald-500/10 rounded flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-all flex-shrink-0">
-        {icon}
+    <ScrollReveal baseDelay={index * 50}>
+      <div className="flex items-center gap-5 group p-4 rounded-xl border border-slate-50 hover:bg-emerald-50/50 hover:border-emerald-100 transition-all shadow-sm">
+        <div className="w-10 h-10 bg-emerald-500/10 rounded flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-all flex-shrink-0">
+          {icon}
+        </div>
+        <span className="text-lg lg:text-xl font-bold text-slate-900 tracking-tight italic group-hover:translate-x-1 transition-transform">{text}</span>
       </div>
-      <span className="text-lg lg:text-xl font-bold text-slate-900 tracking-tight italic group-hover:translate-x-1 transition-transform">{text}</span>
-    </div>
+    </ScrollReveal>
   );
 }

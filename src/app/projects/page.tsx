@@ -19,6 +19,7 @@ import {
   Target
 } from 'lucide-react';
 import Footer from '@/components/Footer';
+import { ScrollReveal } from '@/components/ScrollReveal';
 
 // Expanded Elite Project Data (3 Per Category = 18 Total)
 const projectsData = [
@@ -180,22 +181,26 @@ function ProjectsContent() {
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-white/95 pointer-events-none"></div>
 
         <div className="w-full relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white text-emerald-700 rounded-lg text-xs font-bold mb-8 border border-emerald-200 shadow-sm uppercase tracking-widest backdrop-blur-sm opacity-0 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+          <ScrollReveal baseDelay={100} className="inline-flex items-center gap-2 px-4 py-1.5 bg-white text-emerald-700 rounded-lg text-xs font-bold mb-8 border border-emerald-200 shadow-sm uppercase tracking-widest backdrop-blur-sm">
             {category === 'All' ? 'Strategic Impact Suite' : `${category} Optimization`}
-          </div>
+          </ScrollReveal>
           
-          <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold mb-8 leading-[0.95] tracking-tight italic opacity-0 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-            Defining <br />
-            <span className="text-emerald-600 not-italic">
-              {category === 'All' ? 'Portfolio Excellence' : `${category} Dominance`}
-            </span>
-          </h1>
+          <ScrollReveal baseDelay={200}>
+            <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold mb-8 leading-[0.95] tracking-tight italic">
+              Defining <br />
+              <span className="text-emerald-600 not-italic">
+                {category === 'All' ? 'Portfolio Excellence' : `${category} Dominance`}
+              </span>
+            </h1>
+          </ScrollReveal>
           
-          <p className="text-xl sm:text-2xl text-emerald-900/80 max-w-4xl mx-auto mb-12 leading-relaxed italic text-center font-medium opacity-0 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
-            A prestigious showcase of {category === 'All' ? 'cross-sector' : `industry-specific`} digital architectures designed for absolute <span className="text-black font-bold">market dominance</span>.
-          </p>
+          <ScrollReveal baseDelay={300}>
+            <p className="text-xl sm:text-2xl text-emerald-900/80 max-w-4xl mx-auto mb-12 leading-relaxed italic text-center font-medium">
+              A prestigious showcase of {category === 'All' ? 'cross-sector' : `industry-specific`} digital architectures designed for absolute <span className="text-black font-bold">market dominance</span>.
+            </p>
+          </ScrollReveal>
 
-          <div className="flex flex-wrap justify-center gap-3 lg:gap-4 mt-8 opacity-0 animate-fade-in-up" style={{ animationDelay: '400ms' }}>
+          <ScrollReveal baseDelay={400} className="flex flex-wrap justify-center gap-3 lg:gap-4 mt-8">
             <Link
               href="/projects"
               scroll={false}
@@ -213,7 +218,7 @@ function ProjectsContent() {
                 {cat}
               </Link>
             ))}
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -230,7 +235,6 @@ function ProjectsContent() {
                 icon={project.icon}
                 index={index}
                 onClick={() => setExpandedProject(project)}
-                onMouseEnter={() => setExpandedProject(project)}
               />
             ))}
           </div>
@@ -351,46 +355,46 @@ export default function ProjectsPage() {
   );
 }
 
-function ProjectCard({ title, desc, category, icon, index, onClick, onMouseEnter }: { title: string, desc: string, category: string, icon: React.ReactNode, index: number, onClick?: () => void, onMouseEnter?: () => void }) {
+function ProjectCard({ title, desc, category, icon, index, onClick }: { title: string, desc: string, category: string, icon: React.ReactNode, index: number, onClick?: () => void }) {
   return (
-    <div 
-      onClick={onClick}
-      onMouseEnter={onMouseEnter}
-      className="group relative bg-[#fafafa] border border-slate-200/60 rounded-[2.5rem] p-8 lg:p-10 shadow-sm hover:shadow-[0_45px_100px_-20px_rgba(5,150,105,0.12)] hover:border-emerald-500/30 transition-all duration-700 overflow-hidden flex flex-col justify-between h-full bg-gradient-to-br from-white to-slate-50/50 opacity-0 animate-fade-in-up cursor-pointer"
-      style={{ animationDelay: `${index * 100}ms` }}
-    >
-      <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full -mr-32 -mt-32 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
-      
-      <div className="relative z-10 space-y-6">
-        <div className="flex justify-between items-start">
-          <div className="w-14 h-14 bg-white border border-slate-100 rounded-[1.2rem] flex items-center justify-center text-emerald-600 shadow-sm group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500">
-            {icon}
-          </div>
-          <span className="px-4 py-1.5 bg-emerald-100/50 backdrop-blur-md text-emerald-700 rounded-full text-[9px] font-bold uppercase tracking-widest border border-emerald-50 font-heading tracking-[0.2em]">
-            {category}
-          </span>
-        </div>
+    <ScrollReveal baseDelay={index * 100} className="h-full">
+      <div 
+        onClick={onClick}
+        className="group relative bg-[#fafafa] border border-slate-200/60 rounded-[2.5rem] p-8 lg:p-10 shadow-sm hover:shadow-[0_45px_100px_-20px_rgba(5,150,105,0.12)] hover:border-emerald-500/30 transition-all duration-700 overflow-hidden flex flex-col justify-between h-full bg-gradient-to-br from-white to-slate-50/50 cursor-pointer"
+      >
+        <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full -mr-32 -mt-32 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
         
-        <div className="space-y-3">
-          <h3 className="text-2xl lg:text-3xl font-bold text-black italic group-hover:text-emerald-700 transition-colors duration-500 leading-tight">
-            {title}
-          </h3>
-          <p className="text-slate-500 text-base lg:text-lg leading-relaxed italic text-justify group-hover:text-slate-800 transition-colors duration-500 font-medium tracking-tight">
-            {desc}
-          </p>
+        <div className="relative z-10 space-y-6">
+          <div className="flex justify-between items-start">
+            <div className="w-14 h-14 bg-white border border-slate-100 rounded-[1.2rem] flex items-center justify-center text-emerald-600 shadow-sm group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500">
+              {icon}
+            </div>
+            <span className="px-4 py-1.5 bg-emerald-100/50 backdrop-blur-md text-emerald-700 rounded-full text-[9px] font-bold uppercase tracking-widest border border-emerald-50 font-heading tracking-[0.2em]">
+              {category}
+            </span>
+          </div>
+          
+          <div className="space-y-3">
+            <h3 className="text-2xl lg:text-3xl font-bold text-black italic group-hover:text-emerald-700 transition-colors duration-500 leading-tight">
+              {title}
+            </h3>
+            <p className="text-slate-500 text-base lg:text-lg leading-relaxed italic text-justify group-hover:text-slate-800 transition-colors duration-500 font-medium tracking-tight">
+              {desc}
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div className="relative z-10 pt-8 mt-auto">
-        <div className="flex justify-between items-center opacity-40 group-hover:opacity-100 transition-opacity duration-500">
-          <span className="text-[9px] font-bold uppercase tracking-widest text-emerald-600 font-heading">
-            Strategic Documentation
-          </span>
-          <div className="w-10 h-10 bg-white border border-slate-100 rounded-full flex items-center justify-center text-slate-300 group-hover:bg-emerald-600 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500 shadow-sm font-heading">
-            <ArrowUpRight className="w-5 h-5" />
+        <div className="relative z-10 pt-8 mt-auto">
+          <div className="flex justify-between items-center opacity-40 group-hover:opacity-100 transition-opacity duration-500">
+            <span className="text-[9px] font-bold uppercase tracking-widest text-emerald-600 font-heading">
+              Strategic Documentation
+            </span>
+            <div className="w-10 h-10 bg-white border border-slate-100 rounded-full flex items-center justify-center text-slate-300 group-hover:bg-emerald-600 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500 shadow-sm font-heading">
+              <ArrowUpRight className="w-5 h-5" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </ScrollReveal>
   );
 }

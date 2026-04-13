@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Search, Share2, MousePointer2, ArrowRight, FileText, Globe, Mail, Fingerprint, LineChart, Layout, Zap, ShieldCheck, Target, TrendingUp, Layers } from 'lucide-react';
 import Footer from '@/components/Footer';
+import { ScrollReveal } from '@/components/ScrollReveal';
 
 export default function Home() {
   const [expandedFeature, setExpandedFeature] = useState<{ text: string, desc?: string, icon: React.ReactNode } | null>(null);
@@ -33,31 +34,35 @@ export default function Home() {
             
             {/* Left Content Column */}
             <div className="text-left space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white text-emerald-700 rounded-lg text-xs font-bold border border-emerald-200 shadow-sm uppercase tracking-widest backdrop-blur-sm opacity-0 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+              <ScrollReveal baseDelay={100} className="inline-flex items-center gap-2 px-4 py-1.5 bg-white text-emerald-700 rounded-lg text-xs font-bold border border-emerald-200 shadow-sm uppercase tracking-widest backdrop-blur-sm">
                 Accelerating Digital Excellence
-              </div>
+              </ScrollReveal>
               
-              <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold leading-[0.95] tracking-tight italic opacity-0 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-                Architecting <br />
-                <span className="text-emerald-600 not-italic">Market Dominance</span>
-              </h1>
+              <ScrollReveal baseDelay={200}>
+                <h1 className="text-4xl sm:text-6xl lg:text-8xl font-bold leading-[0.95] tracking-tight italic">
+                  Architecting <br />
+                  <span className="text-emerald-600 not-italic">Market Dominance</span>
+                </h1>
+              </ScrollReveal>
               
-              <p className="text-xl sm:text-2xl text-emerald-900/80 max-w-xl leading-relaxed italic opacity-0 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
-                Establishing absolute brand authority through data-driven strategic engineering and premium digital excellence at <span className="text-black font-bold">MyLearning Project</span>.
-              </p>
+              <ScrollReveal baseDelay={300}>
+                <p className="text-xl sm:text-2xl text-emerald-900/80 max-w-xl leading-relaxed italic">
+                  Establishing absolute brand authority through data-driven strategic engineering and premium digital excellence at <span className="text-black font-bold">MyLearning Project</span>.
+                </p>
+              </ScrollReveal>
               
-              <div className="flex flex-wrap gap-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '400ms' }}>
+              <ScrollReveal baseDelay={400} className="flex flex-wrap gap-6">
                 <Link
                   href="/contact"
                   className="group inline-flex items-center justify-center px-10 py-5 bg-emerald-600 text-white rounded-lg font-bold text-xl hover:bg-slate-900 transition-all duration-300 shadow-2xl active:scale-95"
                 >
                   Free Consultation <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-all" />
                 </Link>
-              </div>
+              </ScrollReveal>
             </div>
 
             {/* Right Image Column */}
-            <div className="relative group">
+            <ScrollReveal baseDelay={500} className="relative group">
               <div className="absolute -inset-4 bg-emerald-500/10 rounded-[2.5rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
               <div className="relative overflow-hidden rounded-3xl shadow-2xl border border-white/50 aspect-video lg:aspect-auto">
                 <img 
@@ -66,7 +71,7 @@ export default function Home() {
                   className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105"
                 />
               </div>
-            </div>
+            </ScrollReveal>
 
           </div>
         </div>
@@ -127,24 +132,24 @@ export default function Home() {
             
             {/* Advantage Portion */}
             <div className="lg:w-2/3 space-y-12">
-              <div className="opacity-0 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+              <ScrollReveal baseDelay={100}>
                 <h2 className="text-emerald-600 font-bold uppercase tracking-widest text-xs mb-3">Global Influence</h2>
                 <h3 className="text-5xl lg:text-7xl font-bold text-black leading-tight italic">
                   Executive Equilibrium.
                 </h3>
-              </div>
+              </ScrollReveal>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <FeatureItem onClick={() => setExpandedFeature({ text: "Predictive Data Intelligence", desc: "Leveraging machine learning to analyze market shifts and predict consumer sentiment with 99% accuracy.", icon: <Zap className="w-8 h-8" /> })} onMouseEnter={() => setExpandedFeature({ text: "Predictive Data Intelligence", desc: "Leveraging machine learning to analyze market shifts and predict consumer sentiment with 99% accuracy.", icon: <Zap className="w-8 h-8" /> })} icon={<Zap className="w-5 h-5" />} text="Predictive Data Intelligence" />
-                <FeatureItem onClick={() => setExpandedFeature({ text: "High-Stakes Strategic Teams", desc: "Our elite consortium of digital architects and business strategists driving unparalleled execution speed.", icon: <ShieldCheck className="w-8 h-8" /> })} onMouseEnter={() => setExpandedFeature({ text: "High-Stakes Strategic Teams", desc: "Our elite consortium of digital architects and business strategists driving unparalleled execution speed.", icon: <ShieldCheck className="w-8 h-8" /> })} icon={<ShieldCheck className="w-5 h-5" />} text="High-Stakes Strategic Teams" />
-                <FeatureItem onClick={() => setExpandedFeature({ text: "Proprietary Growth Models", desc: "Custom-built acceleration algorithms designed to exponentially scale your total addressable market.", icon: <TrendingUp className="w-8 h-8" /> })} onMouseEnter={() => setExpandedFeature({ text: "Proprietary Growth Models", desc: "Custom-built acceleration algorithms designed to exponentially scale your total addressable market.", icon: <TrendingUp className="w-8 h-8" /> })} icon={<TrendingUp className="w-5 h-5" />} text="Proprietary Growth Models" />
-                <FeatureItem onClick={() => setExpandedFeature({ text: "Institutional Partnership", desc: "A white-glove executive relationship establishing absolute alignment with your brand's core vision.", icon: <Target className="w-8 h-8" /> })} onMouseEnter={() => setExpandedFeature({ text: "Institutional Partnership", desc: "A white-glove executive relationship establishing absolute alignment with your brand's core vision.", icon: <Target className="w-8 h-8" /> })} icon={<Target className="w-5 h-5" />} text="Institutional Partnership" />
-                <FeatureItem onClick={() => setExpandedFeature({ text: "Scalable Market Expansion", desc: "Infrastructure designed for rapid international deployment and localized market sovereignty.", icon: <Globe className="w-8 h-8" /> })} onMouseEnter={() => setExpandedFeature({ text: "Scalable Market Expansion", desc: "Infrastructure designed for rapid international deployment and localized market sovereignty.", icon: <Globe className="w-8 h-8" /> })} icon={<Globe className="w-5 h-5" />} text="Scalable Market Expansion" />
-                <FeatureItem onClick={() => setExpandedFeature({ text: "Native Brand Sovereignty", desc: "Deep psychological positioning ensuring your brand commands visceral loyalty and unparalleled recognition.", icon: <Fingerprint className="w-8 h-8" /> })} onMouseEnter={() => setExpandedFeature({ text: "Native Brand Sovereignty", desc: "Deep psychological positioning ensuring your brand commands visceral loyalty and unparalleled recognition.", icon: <Fingerprint className="w-8 h-8" /> })} icon={<Fingerprint className="w-5 h-5" />} text="Native Brand Sovereignty" />
+                <FeatureItem onClick={() => setExpandedFeature({ text: "Predictive Data Intelligence", desc: "Leveraging machine learning to analyze market shifts and predict consumer sentiment with 99% accuracy.", icon: <Zap className="w-8 h-8" /> })} icon={<Zap className="w-5 h-5" />} text="Predictive Data Intelligence" />
+                <FeatureItem onClick={() => setExpandedFeature({ text: "High-Stakes Strategic Teams", desc: "Our elite consortium of digital architects and business strategists driving unparalleled execution speed.", icon: <ShieldCheck className="w-8 h-8" /> })} icon={<ShieldCheck className="w-5 h-5" />} text="High-Stakes Strategic Teams" />
+                <FeatureItem onClick={() => setExpandedFeature({ text: "Proprietary Growth Models", desc: "Custom-built acceleration algorithms designed to exponentially scale your total addressable market.", icon: <TrendingUp className="w-8 h-8" /> })} icon={<TrendingUp className="w-5 h-5" />} text="Proprietary Growth Models" />
+                <FeatureItem onClick={() => setExpandedFeature({ text: "Institutional Partnership", desc: "A white-glove executive relationship establishing absolute alignment with your brand's core vision.", icon: <Target className="w-8 h-8" /> })} icon={<Target className="w-5 h-5" />} text="Institutional Partnership" />
+                <FeatureItem onClick={() => setExpandedFeature({ text: "Scalable Market Expansion", desc: "Infrastructure designed for rapid international deployment and localized market sovereignty.", icon: <Globe className="w-8 h-8" /> })} icon={<Globe className="w-5 h-5" />} text="Scalable Market Expansion" />
+                <FeatureItem onClick={() => setExpandedFeature({ text: "Native Brand Sovereignty", desc: "Deep psychological positioning ensuring your brand commands visceral loyalty and unparalleled recognition.", icon: <Fingerprint className="w-8 h-8" /> })} icon={<Fingerprint className="w-5 h-5" />} text="Native Brand Sovereignty" />
               </div>
             </div>
 
             {/* Foundational Mission Portion */}
-            <div className="lg:w-1/3 w-full lg:sticky lg:top-32 opacity-0 animate-fade-in-up" style={{ animationDelay: '300ms' }}>
+            <ScrollReveal baseDelay={300} className="lg:w-1/3 w-full lg:sticky lg:top-32">
               <div className="bg-emerald-50 border border-emerald-200 rounded-3xl p-10 text-center shadow-xl group transition-all duration-500 overflow-hidden relative">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full -mr-16 -mt-16 blur-2xl"></div>
                 
@@ -159,7 +164,7 @@ export default function Home() {
                   <div className="text-xs font-bold uppercase tracking-widest text-emerald-600">Founded on Excellence</div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
 
           </div>
         </div>
@@ -250,28 +255,30 @@ export default function Home() {
 
 function ServiceCard({ icon, title, desc, iconClass = "text-emerald-600", index = 0 }: { icon: React.ReactNode, title: string, desc: string, iconClass?: string, index?: number }) {
   return (
-    <div className="flex flex-col items-center text-center p-8 rounded-3xl border border-slate-100 hover:bg-emerald-50/50 hover:border-emerald-200 hover:-translate-y-1 transition-all duration-300 group cursor-default shadow-sm hover:shadow-lg opacity-0 animate-fade-in-up" style={{ animationDelay: `${index * 50}ms` }}>
-      <div className={`w-12 h-12 bg-emerald-500/5 rounded-xl flex items-center justify-center ${iconClass} mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-sm`}>
-        {icon}
+    <ScrollReveal baseDelay={index * 50} className="h-full">
+      <div className="flex flex-col items-center justify-center text-center p-8 rounded-3xl border border-slate-100 hover:bg-emerald-50/50 hover:border-emerald-200 hover:-translate-y-1 transition-all duration-300 group cursor-default shadow-sm hover:shadow-lg h-full">
+        <div className={`w-12 h-12 bg-emerald-500/5 rounded-xl flex items-center justify-center ${iconClass} mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-sm`}>
+          {icon}
+        </div>
+        <h3 className="text-xl lg:text-2xl font-bold text-black mb-3 italic">{title}</h3>
+        <p className="text-slate-600 leading-relaxed text-base italic w-full mb-2">{desc}</p>
       </div>
-      <h3 className="text-xl lg:text-2xl font-bold text-black mb-3 italic">{title}</h3>
-      <p className="text-slate-600 leading-relaxed text-base italic w-full mb-2">{desc}</p>
-    </div>
+    </ScrollReveal>
   );
 }
 
-function FeatureItem({ icon, text, index = 0, onClick, onMouseEnter }: { icon: React.ReactNode, text: string, index?: number, onClick?: () => void, onMouseEnter?: () => void }) {
+function FeatureItem({ icon, text, index = 0, onClick }: { icon: React.ReactNode, text: string, index?: number, onClick?: () => void }) {
   return (
-    <div 
-      onClick={onClick}
-      onMouseEnter={onMouseEnter}
-      className="flex items-center gap-5 p-6 rounded-2xl border border-slate-100 bg-white hover:border-emerald-500/30 hover:bg-emerald-50/30 transition-all group shadow-sm hover:shadow-md opacity-0 animate-fade-in-up cursor-pointer" 
-      style={{ animationDelay: `${index * 50}ms` }}
-    >
-      <div className="w-10 h-10 bg-emerald-500/10 rounded-full flex items-center justify-center text-emerald-600 flex-shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition-all">
-        {icon}
+    <ScrollReveal baseDelay={index * 50}>
+      <div 
+        onClick={onClick}
+        className="flex items-center gap-5 p-6 rounded-2xl border border-slate-100 bg-white hover:border-emerald-500/30 hover:bg-emerald-50/30 transition-all group shadow-sm hover:shadow-md cursor-pointer" 
+      >
+        <div className="w-10 h-10 bg-emerald-500/10 rounded-full flex items-center justify-center text-emerald-600 flex-shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition-all">
+          {icon}
+        </div>
+        <span className="text-lg lg:text-xl font-bold text-slate-800 tracking-tight transition-transform group-hover:translate-x-1 italic">{text}</span>
       </div>
-      <span className="text-lg lg:text-xl font-bold text-slate-800 tracking-tight transition-transform group-hover:translate-x-1 italic">{text}</span>
-    </div>
+    </ScrollReveal>
   );
 }
